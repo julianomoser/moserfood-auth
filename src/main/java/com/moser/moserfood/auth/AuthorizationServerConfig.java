@@ -27,11 +27,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
                 .inMemory()
-                .withClient("moserfood-web")
-                .secret(passwordEncoder.encode("web123"))
-                .authorizedGrantTypes("password")
-                .scopes("write", "read")
-                .accessTokenValiditySeconds(60 * 60 * 6); // 6 horas (Padrão é 12 horas)
+                    .withClient("moserfood-web")
+                    .secret(passwordEncoder.encode("web123"))
+                    .authorizedGrantTypes("password")
+                    .scopes("write", "read")
+                    .accessTokenValiditySeconds(60 * 60 * 6) // 6 horas (Padrão é 12 horas)
+                .and()
+                    .withClient("checktoken")
+                    .secret(passwordEncoder.encode("check123"));
     }
 
     @Override
