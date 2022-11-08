@@ -40,7 +40,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .and()
                     .withClient("foodanalytics")
                     .secret(passwordEncoder.encode("food123"))
-                    .authorizedGrantTypes("authorization_code")
+                    .authorizedGrantTypes("http://foodanalytics.local:8080")
                     .scopes("write", "read")
                 .redirectUris("http://aplicacao-cliente")
                 .and()
