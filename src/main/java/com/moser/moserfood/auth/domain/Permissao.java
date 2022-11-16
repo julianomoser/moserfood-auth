@@ -6,8 +6,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author Juliano Moser
@@ -17,7 +15,7 @@ import java.util.Set;
 @ToString
 @RequiredArgsConstructor
 @Entity
-public class Usuario {
+public class Permissao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,12 +23,5 @@ public class Usuario {
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
-    private String email;
-    @Column(nullable = false)
-    private String senha;
-
-    @ManyToMany
-    @JoinTable(name = "usuario_grupo", joinColumns = @JoinColumn(name = "usuario_id"),
-            inverseJoinColumns = @JoinColumn(name = "grupo_id"))
-    private Set<Grupo> grupos = new HashSet<>();
+    private String descricao;
 }
