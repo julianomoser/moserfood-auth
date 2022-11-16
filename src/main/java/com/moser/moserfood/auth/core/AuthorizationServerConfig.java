@@ -1,4 +1,4 @@
-package com.moser.moserfood.auth;
+package com.moser.moserfood.auth.core;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.moser.moserfood.auth;
+package com.moser.moserfood.auth.core;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
